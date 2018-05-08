@@ -27,7 +27,6 @@ public class CustomerSpecification {
     public static Specification<Customer> CommonQuery(Customer customer) {
         return (root, criteriaQuery, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
-
             predicates.add(criteriaBuilder.between(root.get("id"), 50, 1000));
             criteriaQuery.orderBy(criteriaBuilder.desc(root.get("id")));
             criteriaQuery.where(predicates.toArray(new Predicate[predicates.size()]));
