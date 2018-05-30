@@ -11,8 +11,8 @@ public class WeatherData extends Observable {
     }
 
     public void measurementsChanged() {
-        setChanged();
-        notifyObservers();
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public void setMeasurements(float temperature, float humidity, float pressure) {

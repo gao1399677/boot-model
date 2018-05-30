@@ -28,11 +28,11 @@ public class ObserverMain {
     @Test
     public void observer() {
         SubjectImp subject = new SubjectImp();
-        CurrentConditionsDisplay cur = new CurrentConditionsDisplay();
-        subject.registerObserver(cur);
+        CurrentConditionsDisplay current = new CurrentConditionsDisplay();
+        subject.registerObserver(current);
 
         subject.setData(70f, 0.5f, 80.0f);
-        cur.display();
+        current.display();
         Assert.assertThat(2, Matchers.equalTo(1));
     }
 
