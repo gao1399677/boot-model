@@ -1,34 +1,46 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset=utf-8>
-    <title>技侦动态管控大数据</title>
-    <link href=css/vendor.1750dd975547066e7031c697d40f77cb.css rel=stylesheet>
-    <link href=css/dynamic.5090a772c8c0120459119d835b1ab48f.css rel=stylesheet>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css" />
+
 </head>
-<body onselectstart="return false" ondragstart="return false">
-<div class=dynamic-header><a href="" class=top-title></a>
-    <div class=header-info></div>
-</div>
-<div class=dynamic-templates>
-    <div class=pages-left>
-        <div class=in-network></div>
-        <div class=phone-number>
-            <div class="count in-count"></div>
-            <div class="count out-count"></div>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Spring Boot</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
         </div>
     </div>
-    <div class=pages-right>
-        <div class=in-cq-top></div>
-        <div class=out-cq-top></div>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Spring Boot Web Thymeleaf Example</h1>
+        <h2>
+            <!--<span th:text="'Message: ' + ${message}"></span>-->
+        </h2>
     </div>
-    <div class=pages-bottom></div>
+
 </div>
-<div class=top-detials-dialog></div>
-<div class=show-all-name></div>
-<div class=error-dialog></div>
-<script type=text/javascript src=js/manifest.6461d9d79db1e30ada39.js></script>
-<script type=text/javascript src=js/vendor.be41cc27d8b19251ce8e.js></script>
-<script type=text/javascript src=js/dynamic.da4622e6ebf8a3ca42fd.js></script>
+<!-- /.container -->
+
+<script type="text/javascript"
+        src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
