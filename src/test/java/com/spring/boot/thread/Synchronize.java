@@ -1,5 +1,7 @@
 package com.spring.boot.thread;
 
+import static org.springframework.test.context.transaction.TestTransaction.start;
+
 /**
  * <p>Title: Synchronize </p>
  * <p>Description: Synchronize </p>
@@ -15,4 +17,40 @@ package com.spring.boot.thread;
  * ==========================================================
  */
 public class Synchronize {
+    private Integer i = 0;
+    private Integer k = 0;
+
+    public static void main(String[] args) {
+        new Synchronize().start();
+    }
+
+    public void start() {
+        new Thread(() -> {
+            try {
+                while (true) {
+                    synchronized (this.i) {
+                        System.out.println("==start=" + this.i);
+                        Thread.sleep(2000);
+                        System.out.println("==end=" + this.i);
+                    }
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        new Thread(() -> {
+            try {
+                while (true) {
+                    synchronized (this.i) {
+                        this.i += 10;
+                        Thread.sleep(100);
+                    }
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
 }
