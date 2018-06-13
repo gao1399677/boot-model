@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Component
+//@Component
 public class UserRepositoryCommandLineRunner implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(UserRepositoryCommandLineRunner.class);

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -51,7 +53,7 @@ public class CustomerControllerTest {
     //http://localhost:8088/boot/pathVariable1?foo_page=0&foo_size=2?bar_page
     @RequestMapping(value = "pathVariable1")
     public String pathVariableTest1(@Qualifier("foo") Pageable first,
-                                    @Qualifier("bar") Pageable second) {
+                                    @Qualifier("bar") Pageable second, HttpServletResponse response) {
         Page<Customer> customerPage = customerService.queryPage(first);
         Page<Customer> customerPage2 = customerService.queryPage(second);
         this.write(customerPage.getContent());
